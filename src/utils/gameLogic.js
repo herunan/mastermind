@@ -76,5 +76,6 @@ export const formatShareResult = (won, guessCount, guesses, solution) => {
         grid += row + '\n';
     });
 
-    return `${title}\n${score}\n\n${grid}`;
+    const url = typeof window !== 'undefined' && window.SHARE_URL ? `\n${window.SHARE_URL}` : '';
+    return `${title}\n${score}\n\n${grid}${url}`;
 };
